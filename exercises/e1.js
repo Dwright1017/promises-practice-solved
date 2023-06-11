@@ -15,6 +15,16 @@
  */
 
 // Your code goes here
+export const promise = new Promise((res, rej) => setTimeout(res('The PROMISE was RESOLVED'), 1000));
+
+const onFulfilled = (data) => {
+    console.log(data);
+    return data;
+}
+const onReject = (error) => error;
+
+promise
+.then(onFulfilled, onReject)
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-1"
