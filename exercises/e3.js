@@ -14,8 +14,15 @@
  * * getPromise(num) function must be exported
  * Example: export const getPromise(num) => return <Your code of promise>
  */
-export const getPromise = () => {
+export const getPromise = (num) => {
   // Your code goes here...
+  return new Promise((res, rej) => {
+    if (isNaN(num)) {
+      rej(0)
+    } else {
+      res(num)
+    }
+  })
 };
 
 /**
@@ -31,6 +38,10 @@ export const getPromise = () => {
  */
 export const updateSumValue = () => {
   // Your code goes here...
+  var sum = 2;
+  var promise = getPromise(120);
+  promise.then(val => sum + val);
+  return sum += 8;
 };
 
 // === TEST YOURSELF ===
