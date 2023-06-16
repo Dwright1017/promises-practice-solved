@@ -16,13 +16,11 @@
  */
 export const getPromise = (num) => {
   // Your code goes here...
-  return new Promise((res, rej) => {
-    if (isNaN(num)) {
-      rej(0)
-    } else {
-      res(num)
-    }
-  })
+  if (Number.isInteger(num)) {
+    return new Promise((res) => res(num));
+  } else {
+    return 0;
+  }
 };
 
 /**
@@ -38,9 +36,10 @@ export const getPromise = (num) => {
  */
 export const updateSumValue = () => {
   // Your code goes here...
-  var sum = 2;
-  var promise = getPromise(120);
-  promise.then(val => sum + val);
+  let sum = 2;
+  let promise = getPromise(120)
+  promise.then(() => sum = sum + this);
+
   return sum += 8;
 };
 
