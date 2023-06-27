@@ -24,7 +24,8 @@ export const promiseArr = [promise1, promise2, promise3, promise4];
  */
 
 // Your code goes here...
-export const handlePromise1 = Promise.any(promiseArr).catch((e) => e);
+export const handlePromise1 = Promise.allSettled(promiseArr)
+.catch((e) => console.log(e));
 
 /**
  * @task
@@ -41,6 +42,8 @@ export const handlePromise1 = Promise.any(promiseArr).catch((e) => e);
  */
 
 // Your code goes here...
+export const handlePromise2 = Promise.any(promiseArr)
+.then((val) => console.log(val));
 
 /**
  * @task
@@ -57,6 +60,9 @@ export const handlePromise1 = Promise.any(promiseArr).catch((e) => e);
  */
 
 // Your code goes here...
+export const handlePromise3 = Promise.allSettled(promiseArr)
+.then((val) => console.log(val))
+.catch((e) => console.log(e));
 
 /**
  * @task
