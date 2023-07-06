@@ -10,7 +10,7 @@
 
 export const attachTitle = (name) => {
   // Your code goes here...
-  const newName = 'Dr. ' + name;
+  const newName = 'DR. ' + name;
   return newName;
 };
 

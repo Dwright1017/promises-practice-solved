@@ -42,7 +42,7 @@ const getLoginList = (data) => {
 */
 
 // Your code goes here ...
-const getData = fetch(userurl);
+const getData = fetch(usersUrl);
 
 
 /**
@@ -60,10 +60,10 @@ const getData = fetch(userurl);
 export const result = getData
 .then(res => res.json())
 .then(data => {
-  console.log(data)
-  return data
+  const loginArr = getLoginList(data)
+  console.log(loginArr)
+  return loginArr;
 })
-.then(getLoginList(data))
 .catch(e => console.log(e));
 
 

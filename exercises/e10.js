@@ -25,7 +25,14 @@ export const promiseArr = [promise1, promise2, promise3, promise4];
 
 // Your code goes here...
 export const handlePromise1 = Promise.allSettled(promiseArr)
-.catch((e) => console.log(e));
+.then((prom) => {
+  console.log(prom)
+  return prom
+})
+.catch((e) => {
+  console.log(e)
+  return e
+});
 
 /**
  * @task
@@ -43,7 +50,14 @@ export const handlePromise1 = Promise.allSettled(promiseArr)
 
 // Your code goes here...
 export const handlePromise2 = Promise.any(promiseArr)
-.then((val) => console.log(val));
+.then((prom) => {
+  console.log(prom)
+  return prom
+})
+.catch((e) => {
+  console.log(e)
+  return e
+});
 
 /**
  * @task
@@ -61,8 +75,14 @@ export const handlePromise2 = Promise.any(promiseArr)
 
 // Your code goes here...
 export const handlePromise3 = Promise.allSettled(promiseArr)
-.then((val) => console.log(val))
-.catch((e) => console.log(e));
+.then((prom) => {
+  console.log(prom)
+  return prom
+})
+.catch((e) => {
+  console.log(e)
+  return e
+});
 
 /**
  * @task
@@ -72,7 +92,7 @@ export const handlePromise3 = Promise.allSettled(promiseArr)
  * The value of newPromiseArr MUST have more than one promise in the array!
  */
 
-export const newPromiseArr = promiseArr.filter(/* <Your code goes here>*/);
+export const newPromiseArr = promiseArr.filter((promise) => promise.completionTime > 1000);
 
 // Do NOT refactor or update handlePromise4 function, it's all set to work
 export const handlePromise4 = (arr) => {

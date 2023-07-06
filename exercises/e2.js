@@ -18,9 +18,9 @@
 export const getPromise = (boolean) => {
   // Your code goes here...
   if (boolean) {
-    return Promise((res) => res('The PROMISE was Resolved'));
+    return new Promise((res) => res('The PROMISE was RESOLVED'));
   } else {
-    return Promise((rej) => rej('The PROMISE was REJECTED'));
+    return new Promise((rej) => rej('The PROMISE was REJECTED'));
   }
 };
 
@@ -33,9 +33,10 @@ export const getPromise = (boolean) => {
  * The handlePromise() function must be exported
  */
 
-export const handlePromise = () => {
+export const handlePromise = (promise) => {
   // Your code goes here...
-  
+  return promise
+  .then((data) => {return data;}, () => {return 'Uh Oh'});
 };
 
 // === TEST YOURSELF ===

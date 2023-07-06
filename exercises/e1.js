@@ -15,7 +15,7 @@
  */
 
 // Your code goes here
-export const getPromise = new Promise((res, rej) => setTimeout(res('The PROMISE was RESOLVED'), 1000));
+export const getPromise = new Promise((res) => setTimeout(res('The PROMISE was RESOLVED'), 1000));
 
 const onFulfilled = (data) => {
     console.log(data);
