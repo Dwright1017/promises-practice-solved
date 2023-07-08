@@ -24,7 +24,7 @@ export const promiseArr = [promise1, promise2, promise3, promise4];
  */
 
 // Your code goes here...
-export const handlePromise1 = Promise.allSettled(promiseArr)
+export const handlePromise1 = Promise.all(promiseArr)
 .then((prom) => {
   console.log(prom)
   return prom
