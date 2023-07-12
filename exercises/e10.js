@@ -49,14 +49,12 @@ export const handlePromise1 = Promise.all(promiseArr)
  */
 
 // Your code goes here...
-export const handlePromise2 = Promise.any(promiseArr)
+export const handlePromise2 = () => Promise.any(promiseArr)
 .then((prom) => {
-  console.log(prom)
-  return prom
+  prom;
 })
 .catch((e) => {
-  console.log(e)
-  return e
+  e;
 });
 
 /**
@@ -74,14 +72,12 @@ export const handlePromise2 = Promise.any(promiseArr)
  */
 
 // Your code goes here...
-export const handlePromise3 = Promise.allSettled(promiseArr)
+export const handlePromise3 = () => Promise.allSettled(promiseArr)
 .then((prom) => {
-  console.log(prom)
-  return prom
+  prom.map((val) => val);
 })
 .catch((e) => {
-  console.log(e)
-  return e
+  e;
 });
 
 /**
@@ -92,7 +88,7 @@ export const handlePromise3 = Promise.allSettled(promiseArr)
  * The value of newPromiseArr MUST have more than one promise in the array!
  */
 
-export const newPromiseArr = promiseArr.filter((promise) => promise.completionTime > 1000);
+export const newPromiseArr = promiseArr.filter((promise) => promise.res == 'RESOLVED AGAIN');
 
 // Do NOT refactor or update handlePromise4 function, it's all set to work
 export const handlePromise4 = (arr) => {
