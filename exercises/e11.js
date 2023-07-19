@@ -29,9 +29,7 @@ export const usersUrl = 'http://localhost:3000/users/';
 
 const getLoginList = (data) => {
   // Your code goes here...
-  const dataArr = data.map(elm => elm.login)
-
-  return dataArr;
+  return data.map((elm) => elm.login);
 };
 
 /**
@@ -58,8 +56,8 @@ const getData = fetch(usersUrl);
 
 // Your code goes here ...
 export const result = getData
-  .then(res => res.json())
-  .then(data => {
+  .then((res) => res.json())
+  .then((data) => {
     const loginArr = getLoginList(data)
     console.log(loginArr)
     return loginArr;

@@ -40,7 +40,6 @@ export const updateSumValue = () => {
   let promise = getPromise(120)
   promise
     .then(() => sum += this);
-
   return sum += 8;
 };
 
