@@ -17,11 +17,14 @@
 
 export const getPromise = (boolean) => {
   // Your code goes here...
-  if (boolean) {
-    return new Promise((res) => res('The PROMISE was RESOLVED'));
-  } else {
-    return new Promise((rej) => rej('The PROMISE was REJECTED'));
-  }
+  return new Promise((res, rej) => {
+    if (boolean) {
+      res('The PROMISE was RESOLVED');
+    } else {
+      rej('The PROMISE was REJECTED');
+    }
+   }
+  )
 };
 
 /**
@@ -36,7 +39,10 @@ export const getPromise = (boolean) => {
 export const handlePromise = (promise) => {
   // Your code goes here...
   return promise
-  .then((data) => {return data;}, () => {return 'Uh Oh'});
+  .then((data) => 
+  {return data;}, 
+  () => 
+  {return 'Uh Oh'})
 };
 
 // === TEST YOURSELF ===

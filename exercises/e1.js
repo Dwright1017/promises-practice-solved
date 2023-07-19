@@ -15,15 +15,13 @@
  */
 
 // Your code goes here
-export const getPromise = new Promise((res) => setTimeout(res('The PROMISE was RESOLVED'), 1000));
-
-const onFulfilled = (data) => {
-    console.log(data);
-    return data;
-}
-
-getPromise
-.then(onFulfilled)
+export const getPromise = new Promise((res) => 
+setTimeout(res('The PROMISE was RESOLVED'), 1000))
+    .then((data) => {
+        console.log(data);
+        return data;
+    }
+);
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-1"

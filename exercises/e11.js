@@ -58,13 +58,14 @@ const getData = fetch(usersUrl);
 
 // Your code goes here ...
 export const result = getData
-.then(res => res.json())
-.then(data => {
-  const loginArr = getLoginList(data)
-  console.log(loginArr)
-  return loginArr;
-})
-.catch(e => console.log(e));
+  .then(res => res.json())
+  .then(data => {
+    const loginArr = getLoginList(data)
+    console.log(loginArr)
+    return loginArr;
+    }
+  )
+  .catch(e => e);
 
 
 // === TEST YOURSELF ===
